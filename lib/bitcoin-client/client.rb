@@ -220,6 +220,10 @@ class BitcoinClient::Client
     @api.request 'listtransactions', account, count, from
   end
 
+  def listunspent(minconf=1, maxconf=999999)
+    @api.request 'listunspent', minconf, maxconf
+  end
+
   # Returns transactions since <hash> block
   def listsinceblock(hash)
     @api.request 'listsinceblock', hash
