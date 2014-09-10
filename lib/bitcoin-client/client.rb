@@ -224,6 +224,10 @@ class BitcoinClient::Client
     @api.request 'listunspent', minconf, maxconf
   end
 
+  def listaddressgroupings
+    @api.request 'listaddressgroupings'
+  end
+
   # Returns transactions since <hash> block
   def listsinceblock(hash)
     @api.request 'listsinceblock', hash
